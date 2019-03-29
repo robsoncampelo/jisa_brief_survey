@@ -103,12 +103,12 @@
 %\authorrunning{Short form of author list} % if too long for running head
 
 \institute{Robson A. Campêlo \and Dorgival Guedes \and Alberto H. F. Laender \at
-              Department of Computer Science, Universidade Federal de Minas Gerais, Belo Horizonte, MG, Brazil \\
+              Department of Computer Science, Universidade Federal de Minas Gerais, 31270-901 Belo Horizonte, MG, Brazil \\
               \email{\{robson.campelo, dorgival, laender\}@dcc.ufmg.br}           %  \\
 %             \emph{Present address:} of F. Author  %  if needed
            \and
            Marco A.Casanova \at
-               Department of Informatics, Universidade Católica do Rio de Janeiro, Rio de Janeiro, RJ, Brazil \\  \email{casanova@inf.puc-rio.br}   
+               Department of Informatics,   Universidade Católica do Rio de Janeiro,  22451-900 Rio de Janeiro, RJ, Brazil \\  \email{casanova@inf.puc-rio.br}   
 }
 
 \date{Received: date / Accepted: date}
@@ -187,8 +187,7 @@ In cloud environments, partitioning may occur dynamically and in real time.
 \subsection{Cloud data storage requirements}
 \label{sec:2.1}
 A trustworthy and appropriate data storage infrastructure is a key aspect to %achieve 
-{\al provide} an adequate cloud 
-{\al data storage infrastructure,} 
+provide an adequate cloud data storage infrastructure, 
 %data\-base management, 
 so that all resources can be efficiently used and shared to reduce consistency issues. Next we list some crucial requirements that must be considered by a shared infrastructure model~\cite{Brewer2000, ju2011survey, rimal2009taxonomy}. \\
 
@@ -211,7 +210,7 @@ so that all resources can be efficiently used and shared to reduce consistency i
 
 \noindent
 %\textbf{Partitionability.}
-{\al \textbf{Partition  Tolerance.}} The data storage must be tolerant to  network partitions, \emph{i.e.}, the system must continue to operate despite them. %%~\cite{Brewer2000}.
+\textbf{Partition  tolerance.} The data storage must be tolerant to  network partitions, \emph{i.e.}, the system must continue to operate despite them. %%~\cite{Brewer2000}.
 
 \noindent
 \textbf{Performance.} The data storage must provide an infrastructure that supports fast and robust data access, update and recovery.
@@ -242,7 +241,7 @@ Therefore, strategies for data update and propagation must be implemented to ens
 The CAP theorem was introduced by Brewer as a conjecture~\cite{Brewer2000} and subsequently proved (in  a restricted form) by Gilbert and  Lynch~\cite{Gilbert:2002}. 
 Since then it has become an important concept in cloud systems~\cite{brewer2012}.
 It establishes that, when considering the desirable properties of \textit{Consistency}, \textit{Availability} and %\textit{Partitionability}
-{\al \textit{Partition  Tolerance}}
+\textit{Partition  tolerance}
 %\footnote{Tolerance to any network partition ~\cite{Brewer2000}.  
 %\textit{Partition tolerance} occurs when the system continues to operate despite network partitions~\cite{Brewer2000}.}} 
 in distributed systems, at most two of them can be achieved simultaneously. 
@@ -277,7 +276,7 @@ The trade-offs caused by the CAP theorem led to the proliferation of not-ACID sy
 
 A {\it consistency model} may be defined as a contract between a data storage system and the data processes that access it~\cite{tanenbaum:2007}, 
 %%It defines strategies for supporting
-{\al thus defining strategies that support} consistency within a distributed data storage system. However, trade-offs due to the CAP theorem require choosing from a range of models to address different consistency levels, which may vary from a relaxed model to a strict one~\cite{bermbach2013consistency}. 
+thus defining strategies that support consistency within a distributed data storage system. However, trade-offs due to the CAP theorem require choosing from a range of models to address different consistency levels, which may vary from a relaxed model to a strict one~\cite{bermbach2013consistency}. 
 In this context, there are two distinct perspectives to be considered in a distributed data storage system with respect to consistency~\cite{tanenbaum:2007}: 
 the \textit{data-centric perspective} and the \textit{client-centric perspective}.
 %the \textit{data provider {\rc perspective}} and the \textit{client {\rc perspective}}.
@@ -315,7 +314,7 @@ PRAM (Pipelined Random Access Memory) consistency, also known as FIFO consistenc
 Causal consistency is a mod\-el in which a sequential ordering is always maintained only between requests that have a \textit{causal dependency}. Two requests have a causal dependency if at least one of the following two conditions is achieved: (1) both requests are executed on a single thread and the execution of one precedes the other in time; (2) request B reads a value that has been written by a request A. Moreover, this dependency is transitive, so if A and B have a causal dependency, and B and C also have a causal dependency, then there is also a causal dependency between A and C~\cite{tanenbaum:2007,Vogels:2009}.
 %However, concurrent requests do not share this property. In this case, all requests must be serialized in the same order on all replicas~\cite{tanenbaum:2007}. 
 %%% A condição acima é usada para transformar ord. causal em ord. total.
-Thus, in a scenario of an always-available storage system in which requests have causal dependencies, a consistency level stricter than that provided by the causal model cannot be achieved due to trade-offs of the CAP theorem~\cite{mahajan2011consistency}. \\
+Thus, in a scenario of an always-available storage system in which requests have causal dependencies, a consistency level stricter than that provided by the causal model cannot be achieved due to trade-offs of the CAP theorem~\cite{abadi2012consistency,mahajan2011consistency}. \\
 %Causal consistency is a model in which a sequential ordering is always maintained only between requests that have a causal relationship. Thus, concurrent requests do not share this relationship. In this case, all requests must be serialized in the same order on all replicas \cite{tanenbaum:2007}. Thus, in a scenario of an always-available storage system in which requests have causal dependencies, a consistency level stricter than that provided by the causal model cannot be achieved due to trade-offs of the CAP theorem~\cite{mahajan2011consistency}.
 
 %More specifically, two requests have a causal dependency if at least one of the following two conditions is achieved: (1) both requests are executed on a single thread and the execution of one precedes the other in time; (2) if a request B reads a value that has been written by a request A. Moreover, the relationship is transitive, so if A and B have a causal relation, and B and C also have a causal relation, then A and C share the same relationship~\cite{tanenbaum:2007, Vogels:2009}.
@@ -340,7 +339,7 @@ The consistency models that fall in this category are~\cite{tanenbaum:2007}: \te
 %{\rc We describe each one of these consistency models next.}
 
 \noindent \textbf{Eventual Consistency.}
-The eventual consistency mod\-el states that all updates will propagate through the system and all replicas will gradually become consistent, after all updates have stopped for some time~\cite{tanenbaum:2007, Vogels:2009}. Although this model does not provide concrete consistency guarantees, it is {\al advocated  as a solution for many practical situations~\cite{BailisVFHS12,BailisVFHS14,Chihoub2014,Vogels:2009} and has been} implemented by several distributed storage systems~\cite{Chang06bigtable:a, decandia2007dynamo, Ghemawat2003Google, lakshman2010cassandra}. \\
+The eventual consistency mod\-el states that all updates will propagate through the system and all replicas will gradually become consistent, after all updates have stopped for some time~\cite{tanenbaum:2007, Vogels:2009}. Although this model does not provide concrete consistency guarantees, it is advocated  as a solution for many practical situations~\cite{BailisVFHS12,BailisVFHS14,balegas2015putting,Chihoub2014,Vogels:2009} and has been implemented by several distributed storage systems~\cite{Chang06bigtable:a, decandia2007dynamo, Ghemawat2003Google, lakshman2010cassandra}. \\
 
 \noindent \textbf{Monotonic Read Consistency.}
 The monotonic read consistency model guarantees that if a process reads a version of a data item \textit{d} at time \textit{t}, it will never see an older version of \textit{d} at a later time. In a scenario where data visibility is not guaranteed to be instantaneous, at least the versions of a data item will become visible in chronological order~\cite{tanenbaum:2007,Vogels:2009}. \\
@@ -381,7 +380,7 @@ thus meaning that causal consistency is similar to write-follows-reads (WFR).
 \section{Replica consistency methods}
 
 %In this section, we survey state-of-the-art methods for consistency in cloud environments.  The survey includes methods that we considered to be among the most representative in the literature.
-In this section, we present an overview of state-of-the-art methods for {\al replica} consistency in cloud environments. This overview includes those methods that we considered to be among the most representative in the literature.
+In this section, we present an overview of state-of-the-art methods for replica consistency in cloud environments. This overview includes those methods that we considered to be among the most representative in the literature.
 Based on the similarities of their core ideas, we classified these %%selected 
 methods into three distinct categories:~(1) static consistency methods, (2) dynamic consistency methods and (3) consistency monitoring methods. In the following sections, we first describe the generic characteristics of each category and then present an overview of its specific methods.
 
@@ -448,18 +447,19 @@ This type of consistency method aims at dynamically enforcing multiple consisten
 
 The first approach is based on probabilistic computations that provide an estimation of the stale reads\footnote{ Read operations that return  old instances of a data object that has already been updated to a newer value~\cite{lu2015existential}.} rate. Once the estimation model is computed, it is possible to identify the key parameter that affects the stale reads and then to scale up/down the number of replicas involved in read operations in order to maintain a low tolerable fraction of stale reads. This approach is mainly implemented by Harmony~\cite{chihoub2012harmony}, which is a consistency-based system that aims at gradual and dynamically tuning the consistency level at runtime according to the applications' consistency requirements.
 
-The second approach allows the evaluation and enforcement of divergence bounds over data objects (table/row/column), so that the consistency levels can be automatically adjusted based on statistical information. The evaluation takes place on a divergence vector every time an update request is received, although it is necessary to identify the affected data objects. If any limit is exceeded, all updates since the last replication are placed in a FIFO-like queue to be propagated and executed on the other replicas. 
+The second approach allows the evaluation and enforcement of divergence bounds over data objects (table/row/column), %so that the 
+thus providing consistency levels that can be automatically adjusted based on statistical in\-for\-ma\-tion~\cite{PhansalkarDaniL15}. The evaluation takes place on a divergence vector every time an update request is received, although it is necessary to identify the affected data objects. If any limit is exceeded, all updates since the last replication are placed in a FIFO-like queue to be propagated and executed on the other replicas. 
 The most representative system that implements this approach is VFC$^3$ (\textit{Versatile Framework for Consistency in Cloud Computing})~\cite{esteves2012quality}, which provides three-dimensional consistency Qual\-ity-of-Service vectors, where users can specify consistency parameters according to the QoS level desired, thus letting the system automatically adjust the consistency degree.
 
 Finally, the third approach is characterized by dynamically selecting to which server (or even a set of servers) each read of a record must be directed, so that the best service is delivered given the current configuration and system conditions. Hence, this approach is adaptable to distinct configurations of replicas and users, as well as to changing conditions such as variations on the network performance or server load. Another important aspect of this approach is the fact that it allows application developers to provide a Service Level Agreement (SLA) that specifies the applications' consistency/latency desires in a declarative~ manner.  Pileus~\cite{Terry:2013} is a key-value storage system that implements this approach. It provides a diversity of consistency guarantee options for globally distributed and replicated data environments. It also allows several systems or even clients of a system to achieve different consistency degrees, even while sharing the same data.
 
 \subsubsection{Flexible consistency}
 
-This type of consistency method is characterized by its flexibility to adapt to predefined consistency models. In this context, there are four main approaches that implement this type of consistency: (1) combining both weak and strict consistency depending on the operation, {\rc (2) providing configuration options for actors in a multi-cluster}, (3) adopting the notion of consistency regions and (4) performing eventually or strongly consistent reads as needed~\cite{balegas2015putting, BernsteinBBCFKK17, Chen:2014, sivasubramanian2012amazon}.
+This type of consistency method is characterized by its flexibility to adapt to predefined consistency models. In this context, there are four main approaches that implement this type of consistency: (1) combining both weak and strict consistency depending on the operation~\cite{balegas2015putting}, (2) providing configuration options for actors in a multi-cluster~\cite{BernsteinBBCFKK17}, (3) adopting the notion of consistency regions~\cite{Chen:2014} and (4) performing eventually or strongly consistent reads as neededs~\cite{sivasubramanian2012amazon}.
 
 The first approach aims at strengthening eventual consistency, thus allowing the applications to specify consistency rules, or \textit{invariants}, that must be maintained by the system. Once those invariants are defined, it is possible to identify the operations that are potentially unsafe under concurrent execution, thus allowing one to select either a violation-avoid\-ance or an invariant-repair technique. Indigo~\cite{balegas2015putting} is a middleware system that implements this approach. It supports an alternative consistency method built on top of a geo-replicated key-value data store. 
 
-{\rc The second approach aims at supporting updates with a choice of linearizable and eventual consistency. GEO~\cite{BernsteinBBCFKK17} is an open-source geo-distributed actor\footnote{Service applications may use actors to provide a programming model to simplify synchronization, fault-tolerance and scalability. It represents a useful abstraction for the middle tier of scalable service applications that run on a virtualized cloud infrastructure in a datacenter~\cite{BernsteinBBCFKK17}.} system that implements this approach. In GEO, an actor may be declared as \textit{volatile} or \textit{persistent}. In the first case, the latest version resides in memory and may be lost when servers fail, where in the second case the latest version resides in the storage layer. In case a user requests linearizability, GEO guarantees true linearizability by applying to the persistent storage in real time in between call and return.}
+The second approach aims at supporting updates with a choice of linearizable and eventual consistency. GEO~\cite{BernsteinBBCFKK17} is an open-source geo-distributed actor\footnote{Service applications may use actors to provide a programming model to simplify synchronization, fault-tolerance and scalability. It represents a useful abstraction for the middle tier of scalable service applications that run on a virtualized cloud infrastructure in a datacenter~\cite{BernsteinBBCFKK17}.} system that implements this approach. In GEO, an actor may be declared as \textit{volatile} or \textit{persistent}. In the first case, the latest version resides in memory and may be lost when servers fail, where in the second case the latest version resides in the storage layer. In case a user requests linearizability, GEO guarantees true linearizability by applying to the persistent storage in real time in between call and return.
 
 The third approach is based on a formalism proposed to support the applications’ consistency requirements. The trade-off between consistency and scalability requirements is handled by introducing the notion of consistency regions and service-delivery-oriented consistency policies. A consistency region is defined as a logical unit that represents the application state-level requirements for consistency and scalability. This concept is used to define consistency boundaries that separate each group of services that need to be ordered. Hence, services that need to be kept consistent must be associated to a certain region. The definition of what region a service belongs to and which services that can be concurrently delivered is set by the system administrators. 
 Scalable Service Oriented Replication (SSOR)~\cite{Chen:2014} is a middleware that implements this approach. It covers three distinct types of consistency region: (1)~Conflict Region (CR), which is a region composed by services that have conflicting requirements for consistency regardless of the session; (2) Sessional Conflict Region (SCR), which is a region that includes services of a particular session with conflicting consistency requirements; and (3) Non-Con\-flict Region (NCR), which is a region that does not impose any consistency constraints or requirements.
@@ -493,7 +493,7 @@ and multiple small audit clouds composed of a group of users that cooperate on a
 %Service Level Agreement (SLA) 
 involving the audit cloud and the data cloud. Once the SLA exists, the audit cloud can verify whether the data cloud violates it, thus quantifying, in monetary terms or otherwise, the severity of the violation.
 
-Consistency as a Service (CaaS)~\cite{liu2014consistency} implements this method. It relies on a two-level auditing structure, name\-ly: \textit{local auditing} and \textit{global auditing}. Local auditing allows each user to independently perform local tracing operations, focusing on monotonic read and read-your-write consistencies. Global auditing, on the other hand, requires that an auditor is periodically elected from the audit cloud to perform global tracing operations, focusing on causal consistency. This type of method is supported by constructing a directed graph of operations, called the \textit{precedence graph}. If the constructed graph is a directed acyclic graph (DAG), the required level of consistency is preserved~\cite{liu2014consistency}.
+Consistency as a Service (CaaS)~\cite{liu2014consistency,MathBiradar:2013} implements this method. It relies on a two-level auditing structure, name\-ly: \textit{local auditing} and \textit{global auditing}. Local auditing allows each user to independently perform local tracing operations, focusing on monotonic read and read-your-write consistencies. Global auditing, on the other hand, requires that an auditor is periodically elected from the audit cloud to perform global tracing operations, focusing on causal consistency. This type of method is supported by constructing a directed graph of operations, called the \textit{precedence graph}. If the constructed graph is a directed acyclic graph (DAG), the required level of consistency is preserved~\cite{liu2014consistency}.
 
 \section{Discussion}
 
@@ -517,7 +517,7 @@ Regarding the dynamic consistency methods there are \textit{automated and self-a
 	\setlength\extrarowheight{4pt}
 	\centering
 	\footnotesize{
-		\caption{Summary of the Surveyed {\al Replica  Consistency} Methods}
+		\caption{Summary of the Surveyed Replica  Consistency Methods}
 		\vspace{1mm}
 		\label{tab:surveyedMethods}
 		\begin{tabular}{>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{10.5cm}}
@@ -527,15 +527,15 @@ Regarding the dynamic consistency methods there are \textit{automated and self-a
 			& Clock-based Strict Consistency \cite{Corbett:2013, Du2013, salomie2015scaling} & Uses clock-based mechanisms to control timestamps to enforce strict consistency. \\ \hline
 			
 			Dynamic Consistency  & Automated and Self-Adapt\-ive Con\-sist\-en\-cy \cite{chihoub2012harmony, esteves2012quality, Terry:2013} & Provides a gradually and dynamically tunable consistency level at runtime according to the applications' consistency requirements. \par Enforces increasing degrees of consistency for different types of data, based on their semantics.\\
-			& Flexible Consistency Guarantees \cite{balegas2015putting, BernsteinBBCFKK17, Chen:2014, sivasubramanian2012amazon} & Allows applications to specify consistency rules, or \textit{invariants}, that must be maintained by the system. \par {\rc Supports updates with a choice between linearizable and eventual consistency.} \par Supports the applications' consistency requirements and flexibly adapt to predefined consistency models. \par Allows applications to perform eventually or strongly consistent reads as needed.  \\ \hline
+			& Flexible Consistency Guarantees \cite{balegas2015putting, BernsteinBBCFKK17, Chen:2014, sivasubramanian2012amazon} & Allows applications to specify consistency rules, or \textit{invariants}, that must be maintained by the system. \par Supports updates with a choice between linearizable and eventual consistency. \par Supports the applications' consistency requirements and flexibly adapt to predefined consistency models. \par Allows applications to perform eventually or strongly consistent reads as needed.  \\ \hline
 			
 			Consistency Monitoring  & Consistency \ \ Verification \cite{BrandenburgerCK15, MukundanML12} & Enables a group of mutually trusting clients to detect data-integrity and consistency violations.  \par Allows the data owner to ensure that the Cloud Service Provider stores all data copies that are agreed upon in the service level contract.  \\
-			& Consistency \ \ \ \ \ \ \ \ Auditing \cite{liu2014consistency} & Implements a Local and Global Auditing structure to allow a group of clients to detect the occurrence of consistency violations.    \\
+			& Consistency \ \ \ \ \ \ \ \ Auditing \cite{liu2014consistency,MathBiradar:2013} & Implements a Local and Global Auditing structure to allow a group of clients to detect the occurrence of consistency violations.    \\
 			\hline
 	\end{tabular}}
 \end{table*}
 
-As proposed in Section~4, {\al replica} consistency methods can be grouped in three categories: static consistency methods, dynamic consistency methods and consistency monitoring methods.
+As proposed in Section~4, replica consistency methods can be grouped in three categories: static consistency methods, dynamic consistency methods and consistency monitoring methods.
 
 Static Consistency methods are mostly based on versioning of events. They capture the idea of event ordering by means of control strategies such as a sequence number that represents a data object version or clock-based mechanisms which are well-under\-stood concepts in distributed systems~\cite{fidge1991logical, lamport1978time, mattern1989virtual}. The idea of an event happening before another represents a causal relationship and the total ordering of events among the replicas has been shown quite useful for solving synchronization issues related to data consistency. Thus, consistency methods in this category extend this concept on specific scenarios.
 
@@ -551,7 +551,7 @@ On the other hand, consistency monitoring methods do not provide specific guaran
 	%	\small{
 	\footnotesize
 	\setlength\tabcolsep{4pt}
-	\caption{Storage Requirements Supported by the {\al Replica}  Consistency Methods}
+	\caption{Storage Requirements Supported by the Replica  Consistency Methods}
 	\label{tab:storageRequirements}
 	\begin{tabular}{|c|c|l|l|l|l|l|l|l|l|l|}
 		\hline
@@ -579,7 +579,7 @@ On the other hand, consistency monitoring methods do not provide specific guaran
 		
 		\multirow{7}{*}{ \begin{tabular}[c]{@{}c@{}} Dynamic Consistency \\ Methods \end{tabular}}    & 
 		Indigo \cite{balegas2015putting} &  &  &  & \checkmark & \checkmark & \checkmark  &  &  &   \\ \cline{2-11} 
-		&{\rc GEO \cite{BernsteinBBCFKK17}} &  & \checkmark &  & \checkmark & \checkmark &  & \checkmark  &  & \checkmark  \\ \cline{2-11} 
+		&GEO \cite{BernsteinBBCFKK17} &  & \checkmark &  & \checkmark & \checkmark &  & \checkmark  &  & \checkmark  \\ \cline{2-11} 
 		& SSOR \cite{Chen:2014} &  & & \checkmark & \checkmark &  &   & \checkmark  & \checkmark & \checkmark  \\ \cline{2-11} 
 		& Harmony \cite{chihoub2012harmony} & \checkmark & \checkmark &   &  & \checkmark &  & \checkmark  &   &  \\ \cline{2-11}
 		& VFC \cite{esteves2012quality} & \checkmark & \checkmark  & &  & \checkmark &  & \checkmark & \checkmark & \checkmark  \\ \cline{2-11}
@@ -588,7 +588,7 @@ On the other hand, consistency monitoring methods do not provide specific guaran
 		
 		\multirow{3}{*}{ \begin{tabular}[c]{@{}c@{}} Consistency Monitoring \\ Methods \end{tabular}}    & 
 		VICOS \cite{BrandenburgerCK15} &  \multicolumn{9}{c|}{not applied}   \\ \cline{2-11} 
-		& CaaS \cite{liu2014consistency} &  \multicolumn{9}{c|}{not applied}  \\ \cline{2-11} 
+		& CaaS \cite{liu2014consistency,MathBiradar:2013} &  \multicolumn{9}{c|}{not applied}  \\ \cline{2-11} 
 		& DMR-PDP \cite{MukundanML12} &  \multicolumn{9}{c|}{not applied}  
 		\\ \hline 
 	\end{tabular}
@@ -608,22 +608,20 @@ As previously mentioned, existing trade-offs determined by the CAP theorem imply
 also aim to support other features such as high availability and scalability, even reducing the degree of consistency to a level that may be deemed acceptable.
 \end{comment}
 
-{\rc 
-As previously mentioned in Section~\ref{sec:2.3}, the existing trade-off determined by the CAP theorem implies that applications must sacrifice consistency to be able to satisfy other application requirements. Thus, Table~\ref{tab:storageRequirements} shows Availability and Partition Tolerance as storage requirements, which are related to the CAP theorem. In regard to the remaining requirements in Table~\ref{tab:storageRequirements}, they are not directly {\al related to} the CAP theorem, %however, we consider that these requirements represent
-{\al but have} some impact on the consistency methods (See Sect.~\ref{sec:2.1}). 
+As previously mentioned in Section~\ref{sec:2.3}, the existing trade-off determined by the CAP theorem implies that applications must sacrifice consistency to be able to satisfy other application requirements. Thus, Table~\ref{tab:storageRequirements} shows Availability and Partition Tolerance as storage requirements, which are related to the CAP theorem. In regard to the remaining requirements in Table~\ref{tab:storageRequirements}, they are not directly related to the CAP theorem,
+but have some impact on the consistency methods (See Sect.~\ref{sec:2.1}). 
 
-In this context, Table 2 shows that PNUTS~\cite{cooper2008pnuts}, Spanner~\cite{Corbett:2013}, Clock-SI~\cite{Du2013}, DynamoDB~\cite{sivasubramanian2012amazon} and Pi\-leus~\cite{Terry:2013} guarantee at the same time Availability and Partition Tolerance, {\al thus providing a weaker type of consistency.}
+In this context, Table 2 shows that PNUTS~\cite{cooper2008pnuts}, Spanner~\cite{Corbett:2013}, Clock-SI~\cite{Du2013}, DynamoDB~\cite{sivasubramanian2012amazon} and Pi\-leus~\cite{Terry:2013} guarantee at the same time Availability and Partition Tolerance, thus providing a weaker type of consistency.
 %to provide the consistency methods According to the CAP theorem, at most two properties can be achieved simultaneously. 
-Thus, these systems address the CAP's trade-off by sacrificing consistency. 
+Therefore, these systems address the CAP's trade-off by sacrificing consistency. 
 
-PNUTS, Spanner and Clock-SI implement static consistency methods, so that the consistency criterion is not flexible, which means that the consistency criteria these systems adopt are not flexible. 
+PNUTS, Spanner and Clock-SI implement static consistency methods, %so that the consistency criterion is not flexible, 
+which means that the consistency criteria these systems adopt are not flexible. 
 %and it does not require to
 %{\al but need not} be strict. 
-On the other hand, DynamoDB and Pileus implement dynamic consistency methods, thereby tuning the consistency level is not a problem under certain scenarios. For the remaining systems, consistency is not impacted by the CAP's trade-off. Vela~\cite{salomie2015scaling}, GEO~\cite{BernsteinBBCFKK17}, Harmony~\cite{chihoub2012harmony} and VFC~\cite{esteves2012quality} do not guarantee partition tolerance, {\al which means that} availability and consistency {\al might} be achieved. Indigo~\cite{balegas2015putting} does not guarantee availability, thereby achieving consistency and partition tolerance. Finally, SSOR~\cite{Chen:2014} does not guarantee availability and partition tolerance, which means that its dynamic method %can to 
-{\al concerns} only in providing consistency.
-}
+On the other hand, DynamoDB and Pileus implement dynamic consistency methods, thereby tuning the consistency level is not a problem under certain scenarios. For the remaining systems, consistency is not impacted by the CAP's trade-off. Vela~\cite{salomie2015scaling}, GEO~\cite{BernsteinBBCFKK17}, Harmony~\cite{chihoub2012harmony} and VFC~\cite{esteves2012quality} do not guarantee partition tolerance, meaning that availability and consistency are likely to be achieved. Similarly, Indigo~\cite{balegas2015putting} does not guarantee availability, thus achieving consistency and partition tolerance. Finally, SSOR~\cite{Chen:2014} does not guarantee availability and partition tolerance, which means that its dynamic method concerns only in providing consistency.
 
-{\rc Table~\ref{tab:storageRequirements} also shows that availability and scalability are the most addressed storage requirements supported by the surveyed systems, whereas elasticity is the least one.} Although elasticity is not exploited by most of the surveyed systems, this is a desirable and important feature for large scale applications, 
+Table~\ref{tab:storageRequirements} also shows that availability and scalability are the most addressed storage requirements supported by the surveyed systems, whereas elasticity is the least one. Although elasticity is not exploited by most of the surveyed systems, this is a desirable and important feature for large scale applications, 
 %It is characterized by 
 since it provides the ability to deal with load increases by adding more resources during high demand and releasing them when load decreases. Elasticity differs from scalability in the sense that the latter is a static property of the system, whereas the former is a dynamic feature that allows the system’s scale to be increased~\cite{agrawal2011database}. For instance, a scalable system might scale to hundreds or even to thousands of nodes. By contrast, an elastic system can scale from 10 servers to 20 servers (or vice-versa) on-demand.
 %While scalability is a static property of the system, elasticity is a dynamic feature that allows the system’s scale to be increased on-demand~\cite{agrawal2011database}. Therefore, 

@@ -5,6 +5,12 @@ D.~J. Abadi.
 \newblock {Data Management in the Cloud: Limitations and Opportunities}.
 \newblock {\em IEEE Data Engineering Bulletin}, 32:3--12, 2009.
 
+\bibitem{abadi2012consistency}
+D.~J. Abadi.
+\newblock {Consistency Tradeoffs in Modern Distributed Database System Design:
+  {CAP} is Only Part of the Story}.
+\newblock {\em IEEE Computer}, 45(2):37--42, 2012.
+
 \bibitem{agrawal2011database}
 D.~Agrawal, A.~E. Abbadi, S.~Das, and A.~J. Elmore.
 \newblock {Database Scalability, Elasticity, and Autonomy in the Cloud}.
@@ -13,8 +19,8 @@ D.~Agrawal, A.~E. Abbadi, S.~Das, and A.~J. Elmore.
 
 \bibitem{agrawal2015taxonomy}
 D.~Agrawal, A.~El Abbadi, and K.~Salem.
-\newblock A taxonomy of partitioned replicated cloud-based database systems.
-\newblock {\em IEEE Data Engineering Bulletin.}, 38(1):4--9, 2015.
+\newblock {A Taxonomy of Partitioned Replicated Cloud-based Database Systems}.
+\newblock {\em IEEE Data Engineering Bulletin}, 38(1):4--9, 2015.
 
 \bibitem{Al-Roomi13}
 M.~Al-Roomi, S.~Al-Ebrahim, S.~Buqrais, and I.~Ahmad.
@@ -114,7 +120,7 @@ H.~Chihoub, S.~Ibrahim, G.~Antoniu, and M.~S. Perez.
 
 \bibitem{Chihoub2014}
 H.~Chihoub, S.~Ibrahim, G.~Antoniu, and M.~S. Pérez.
-\newblock Consistency management in cloud storage systems.
+\newblock {Consistency Management in Cloud Storage Systems}.
 \newblock In M.~Gaber S.~Sakr, editor, {\em Large Scale and Big Data:
   Processing and Management}. CRC Press, 2014.
 
@@ -156,7 +162,7 @@ A.~Dubey and D.~Wagle.
 
 \bibitem{Elbushra:2014}
 M.~M. Elbushra and J.~Lindström.
-\newblock {Eventual Consistent Databases: State of the art}.
+\newblock {Eventual Consistent Databases: State of the Art}.
 \newblock {\em Open Journal of Databases}, 1(1):26--41, 2014.
 
 \bibitem{esteves2012quality}
@@ -257,6 +263,13 @@ P.~Mahajan, L.~Alvisi, and M.~Dahlin.
 \newblock Tecnical Report UTCS TR-11-22, Department of Computer Science, The
   University of Texas at Austin, 2011.
 
+\bibitem{MathBiradar:2013}
+N.~R. Math and V.~Biradar.
+\newblock {Consistency as a Service: Maintaining Cloud Consistency Using
+  Auditing}.
+\newblock {\em International Journal of Innovative Science Engineering and
+  Technology}, 2(6):577--588, August 2015.
+
 \bibitem{mattern1989virtual}
 F.~Mattern.
 \newblock {Virtual Time and Global States of Distributed Systems}.
@@ -271,6 +284,12 @@ R.~Mukundan, S.~Madria, and M.~Linderman.
 M.~T. {\"{O}}zsu and P.~Valduriez.
 \newblock {\em {Principles of Distributed Database Systems, Third Edition}}.
 \newblock Springer, 2011.
+
+\bibitem{PhansalkarDaniL15}
+S.~P. Phansalkar and A.~R. Dani.
+\newblock Tunable consistency guarantees of selective data consistency model.
+\newblock {\em Journal of Cloud Computing: Advances, Systems and Applications},
+  4(13), 2015.
 
 \bibitem{rimal2009taxonomy}
 B.~P. Rimal, E.~Choi, and I.~Lumb.
